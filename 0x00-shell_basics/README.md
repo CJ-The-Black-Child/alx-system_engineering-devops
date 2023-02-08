@@ -8,4 +8,5 @@ This directory contains all files associated with the task concerning alx_system
 5-listfilesdigitonly ==> Display current directory contents long format, with user and group IDs displayed numerically
 6-firstdirectory ==> this script creates a directory named my_first_directory in the /tmp/ directory 
 7-movethatfile ==> moves the file betty from /tmp to /tmp/my_first_directory
+8-firstdelete ==> deletes the file betty
 
