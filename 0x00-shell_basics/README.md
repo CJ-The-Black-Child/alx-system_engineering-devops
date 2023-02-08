@@ -4,4 +4,5 @@ This directory contains all files associated with the task concerning alx_system
 1-listit ==> this file displays the content list of your current directory
 2-bring_me_home ==> This file changes the working directory to the user's home directory
 3-listfiles ==> Displays the current directory contents in a long format
+4-listmorefiles ==> Displays current hidden directory contents, including hidden files (starting with .)
 
