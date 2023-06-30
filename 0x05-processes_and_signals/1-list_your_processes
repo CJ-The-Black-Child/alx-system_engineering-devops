@@ -1,20 +1,4 @@
 #!/usr/bin/env bash
+# This script Displays list of current working processes
 
-# Use the ps comamnd with appropriate options to list all running processes
-# -e: Select all processes
-# -o: Define the output format
-# user: User owning the process
-# pid: Process ID
-# %cpu: CPU usage
-# %mem: memory usage
-# vsz: Virtual memory size
-# rss: Resident set size
-# tty: Terminal associated with the process
-# stat: Process state
-# start: Process start time
-# time: CPU time consumed by the process
-# command: Commmand with all its arguments
 ps -auxf
-
-# Output:
-# User-oriented list of currently running processes
