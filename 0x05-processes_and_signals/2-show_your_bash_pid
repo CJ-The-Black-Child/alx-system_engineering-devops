@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+# Ignore the SC2009 shellcheck error for the grep command
+# as we are intentionally using it here
+# shellcheck disable=SC2009
+
+# Use the ps command with appropriate options to list all processes
+# -e: Select all processes
+# -o: Define the output format
+# user: User owning the process
+# pid: Process ID
+# command: Command with all its arguments
+# Use grep to filter lines containing the word "bash"
+ps -e -o user,pid,command | grep bash
+
+# Output:
+# Lines containing the word "bash"
