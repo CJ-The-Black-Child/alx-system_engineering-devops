@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
 # This script stops task #4 without kill or killall commands
 
-pid=$(pgrep "4-to_infinity_and_beyond")
-if [[ -n $pid ]]; then
-	# Terminate the process by sending SIGTERM signal
-	kill -SIGTERM "$pid"
-	echo "Terminated"
-else
-	echo "Process not found"
-fi
+pkill -f 4-to_infinity_and_beyond
