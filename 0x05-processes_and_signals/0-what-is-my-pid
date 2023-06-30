@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # $$ expands to the process ID of the current script
 echo $$
