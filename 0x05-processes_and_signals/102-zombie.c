@@ -33,7 +33,7 @@ int main(void)
 	{
 		child_pid = fork();
 		if (!zombie)
-			return(0);
+			return (0);
 			printf("Zombie process created, PID: %d\n," child_pid);
 	}
 
