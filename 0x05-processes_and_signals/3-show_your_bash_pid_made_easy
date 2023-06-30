@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+# Use the pgrep command with appropriate options to find processes
+# matching the patter "bash"
+# -l: List process names as well as PIDs
+# -f: Match against the entire command line
+# -a: Show command line with the process name
+# grep: Filter lines containing the word "bash"
+pgrep -lfa bash | grep bash
+
+# Output:
+# PID process_name
