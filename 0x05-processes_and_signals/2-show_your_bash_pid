@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Ignore the SC2009 shellcheck error for the grep command
 # as we are intentionally using it here

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Use the pgrep command with appropriate options to find processes
 # matching the patter "bash"

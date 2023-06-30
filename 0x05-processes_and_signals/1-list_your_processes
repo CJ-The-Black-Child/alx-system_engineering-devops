@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Use the ps comamnd with appropriate options to list all running processes
 # -e: Select all processes
