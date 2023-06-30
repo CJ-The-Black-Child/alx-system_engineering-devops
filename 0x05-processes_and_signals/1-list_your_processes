@@ -14,7 +14,7 @@
 # start: Process start time
 # time: CPU time consumed by the process
 # command: Commmand with all its arguments
-ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+ps -auxf
 
 # Output:
 # User-oriented list of currently running processes
