@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-
 # $$ expands to the process ID of the current script
-echo $$
 
-# Output:
-# The PID of the script
+echo $$
