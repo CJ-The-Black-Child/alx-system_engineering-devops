@@ -2,5 +2,5 @@
 # This script tells a story based on the content of /etc/passwd
 
 while IFS=':' read -r username _ userid _ _ home shell; do
-	echo "The user $username is part of the $userid gang, lives in $home and rides $shell. $userid's place is protected by the passcode x, more info about the user her: $username"
+	echo "The user $username is part of the $userid gang, lives in $home and rides $shell. $userid's place is protected by the passcode x, more info about the user here: $username"
 done < /etc/passwd
