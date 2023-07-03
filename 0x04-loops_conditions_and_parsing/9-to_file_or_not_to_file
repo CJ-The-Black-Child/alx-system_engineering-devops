@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script provides information about the school file
-sudo touch /var/run/myscript.pid
-sudo chmod +x /var/run/myscript.pid
+sudo touch /var/run/holbertonscript.pid
+sudo chmod +x /var/run/holbertonscript.pid
 file=/var/run/holbertonscript.pid
 trap 'echo Y u no love me?!' SIGINT
 trap 'rm $file; exit' SIGQUIT
