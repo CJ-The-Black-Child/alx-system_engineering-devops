@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # This script provides information about the school file
+sudo touch /var/run/myscript.pid
+sudo chmod +x /var/run/myscript.pid
 file=/var/run/holbertonscript.pid
 trap 'echo Y u no love me?!' SIGINT
 trap 'rm $file; exit' SIGQUIT
 trap 'echo I hate the kill command; run $file; exit' SIGTERM
 echo $$ > "$file"
-while true; do
-	echo To infinity and beyond
+while ((1)) ;do
+	echo "To infinity and beyond"
 	sleep 2
 done
