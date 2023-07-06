@@ -3,17 +3,17 @@ Thus;
 
 ## List of Scripts
 
-1. 0-OSI_model: Bash script that explains the OSI model,
+1. '0-OSI_model': Bash script that explains the OSI model,
 	its purposeand organization
-2. 1-types_of: Bash script  that describes different types of netwroks,
-	including LAN, WAN, and MAN.
-3. 2-MAC_and_IP_address: Bash script that explains MAC Addresses and IP,
+2. '1-types_of_network': Bash script  that describes different types of
+	netwroks, including LAN, WAN, and MAN.
+3. '2-MAC_and_IP_address': Bash script that explains MAC Addresses and IP,
 	and their roles in networking.
-4. 3-UDP_and_TCP: Bash script that discusses the differences between UDP
+4. '3-UDP_and_TCP': Bash script that discusses the differences between UDP
 	and TCP protocols.
-5. 4_TCP_and_UDP_ports: Bash script that displays listening ports with
+5. '4_TCP_and_UDP_ports': Bash script that displays listening ports with
 	their associated PID and program name.
-6. 5-is_the_host_on_the_network: Bash script that pings and Ip Addess to
+6. '5-is_the_host_on_the_network': Bash script that pings and Ip Addess to
 	check its availanility on the network.
 
 ## Usage
