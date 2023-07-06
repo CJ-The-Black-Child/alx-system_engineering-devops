@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+# Backup the original hosts file
+sudo cp /etc/hosts /etc/hosts.bak
+
+# update localhost entry to 127.0.0.2
+sudo sed -i 's/127\.0\.0\.1/127\.0\.0\.2/g' /etc/hosts
+
+# Update facebook.com entry to 8.8.8.8
+sudo sed -i 's/facebook\.com/8\.8\.8\.8/g' /etc/hosts
+
+# Restart the networking service for the changes to take effect
+sudo systemctl restart networking.service
+
+echo "Configuration complete."
