@@ -1,1 +1,1 @@
-This dir contains tasks solutions to the project; Networking Basics #0
+This directory contains tasks solutions to the project on # Network  basics

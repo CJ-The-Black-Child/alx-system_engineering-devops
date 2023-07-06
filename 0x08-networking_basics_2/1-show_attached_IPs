@@ -1,3 +1,4 @@
 #!/usr/bin/bash
+# This script shows all active IPv4 Addresses
 
-ip -4 addr show | awk '/inet / {print $2}' |cut -d '/' -f 1
+ip -4 addr show | awk '/inet / {print $2}' | cut -d '/' -f 1

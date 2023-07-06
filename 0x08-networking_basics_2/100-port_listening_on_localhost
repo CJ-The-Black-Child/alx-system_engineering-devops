@@ -1,3 +1,4 @@
 #!/usr/bin/bash
+# Listens to port 98 on the local host
 
 nc -l -p 98

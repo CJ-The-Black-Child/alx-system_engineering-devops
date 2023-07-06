@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# Configures Ubuntu server using specificied configurations
 
 # Backup the original hosts file
 sudo cp /etc/hosts /etc/hosts.bak
