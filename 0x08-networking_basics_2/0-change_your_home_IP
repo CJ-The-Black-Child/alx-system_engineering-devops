@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Configures Ubuntu server using specificied configurations
 
 # Backup the original hosts file
