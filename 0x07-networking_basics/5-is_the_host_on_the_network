@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # This Bash script is used to ping an IP Address and display ping statistics
 
 if [ -z "$1" ]; then

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # This script is used to display listening ports with PID and progress name
 # can also use netstat -tulnep for more detailed info
 netstat -lp
