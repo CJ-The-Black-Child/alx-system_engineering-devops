@@ -1,3 +1,5 @@
+# Creation of a file in the /temp dir
+
 file { 'school':
 ensure  => 'present',
 content => 'I love Puppet',
