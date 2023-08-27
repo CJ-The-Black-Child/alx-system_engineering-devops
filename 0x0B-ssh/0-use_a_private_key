@@ -1,4 +1,9 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # SSH command with single-character flags
 
-ssh -i ~/.ssh/school ubuntu@34.237.91.196
+# Server details
+server="34.237.91.196"
+user="ubuntu"
+
+# SSH command with single-character flags
+ssh -i ~/.ssh/school $user@$server
