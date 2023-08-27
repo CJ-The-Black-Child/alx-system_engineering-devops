@@ -4,4 +4,4 @@ server="34.237.91.196"
 user="ubuntu"
 
 # SSH command with single-character flags
-ssh -i ~/.ssh/school ubuntu@34.237.91.196
+ssh -i ~/.ssh/school $user@$server
