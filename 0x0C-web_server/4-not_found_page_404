@@ -7,11 +7,11 @@ ufw allow 'Nginx HTTP'
 sudo chmod -R 755 /var/www
 echo 'Hello World' | sudo tee /var/www/html/index.html
 
-NEW_CONFIG="
-server {
+new_config=\
+"server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
-	root /var/www/html;
+		root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
 
@@ -31,7 +31,7 @@ server {
 "
 
 echo "Ceci n'est pas une page." | sudo tee /var/www/html/404.html
-echo "$NEW_CONFIG" > /etc/nginx/sites-available/default
+echo "$new_config" > /etc/nginx/sites-available/default
 
 if [ "$(pgrep nginx)" -le 0 ]; then
     sudo service nginx start
