@@ -22,6 +22,7 @@ server {
 
 	if (\$request_uri ~ ^/redirect_me){
 		rewrite ^ https://youtube.com permanent;
+		return 301;
 	}
 }"
 
