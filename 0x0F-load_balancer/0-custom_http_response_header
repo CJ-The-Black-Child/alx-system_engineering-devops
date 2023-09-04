@@ -42,10 +42,10 @@ server_config="server {
 }"
 
 # Create a new Nginx configuration file with the server_config content
-echo "$server_config" | sudo tee /etc/nginx/sites-available/default
+echo "$server_config" | sudo tee /etc/nginx/sites-available/custom_header
 
 # Create a symbolic link to enable the new configuration
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/custom_header /etc/nginx/sites-enabled/
 
 # Test the Nginx configuration for errors
 sudo nginx -t
