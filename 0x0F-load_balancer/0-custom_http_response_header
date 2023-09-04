@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-# This configues web-02 to be as identical as web-01
-# The name of the custom HTTP header must be X-Served-By
-# The value of the custom HTTP header must be the hostname
-# of the server Nginx is running on
 
 # Update package information
 sudo apt-get -y update
@@ -46,10 +42,10 @@ server_config="server {
 }"
 
 # Create a new Nginx configuration file with the server_config content
-echo "$server_config" | sudo tee /etc/nginx/sites-available/custom_header
+echo "$server_config" | sudo tee /etc/nginx/sites-available/default
 
 # Create a symbolic link to enable the new configuration
-sudo ln -s /etc/nginx/sites-available/custom_header /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 # Test the Nginx configuration for errors
 sudo nginx -t
