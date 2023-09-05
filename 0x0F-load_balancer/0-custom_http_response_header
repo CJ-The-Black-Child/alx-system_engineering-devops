@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# This configures web-02 to be identical as web-01
+# The name of the custom HTTP header must be X-Served-By
+# The value of the custom header must be the hostname
+# of the server Nginx is running on
 
 # Update package information
 sudo apt-get -y update
