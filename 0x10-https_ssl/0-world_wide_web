@@ -14,7 +14,7 @@ domain_information() {
 		echo "The subdomain $subdomain does not exist for $domain"
 	else
 		record_type=$(dig "$subdomain.$domain" | awk '/IN\s+A/ {print "A record"}')
-		echo "The subdomain $subdomain is a $record_type record and points to $result"
+		echo "The subdomain $subdomain is a $record_type and points to $result"
 	fi
 	}
 
@@ -23,7 +23,7 @@ if [ $# -eq 1 ]; then
 	# When only the domain argument is provided, query information for specific subdomains
 	subdomains=("www" "lb-01" "web-01" "web-02")
 	for subdomain in "${subdomains[@]}"; do
-		domain_information "$subdomain" "$1"
+	    domain_information "$subdomain" "$1"
     	done
 elif [ $# -eq 2 ]; then
 	# When both domain and subdomain arguments are provided, query info
