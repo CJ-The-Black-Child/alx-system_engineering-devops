@@ -14,7 +14,7 @@ query_dns() {
 		echo "The subdomain $subdomain does not exist for $domain"
 	else
 		local record_type
-		record_type=$(dig "$subdomain.$domain" | awk '/IN\s+A/ {print $4}')
+		record_type=$(dig "$subdomain.$domain" | awk '/IN\s+A/ {print "A"}')
 		echo "The subdomain $subdomain is a $record_type record and points to $result"
 	fi
 	}
