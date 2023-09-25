@@ -9,6 +9,7 @@ import csv
 import requests
 from sys import argv
 
+
 def fetch_user_data(user_id):
     user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
     todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
@@ -26,17 +27,20 @@ def fetch_user_data(user_id):
         print(f"Error: {e}")
         return None, None
 
+
 def export_to_csv(user_id, user_data, todo_data):
     if user_data is None or todo_data is None:
         return
 
     csv_filename = f"{user_id}.csv"
 
-    with open(csv_filename, mode='w',newline='') as csvfile:
+    with open(csv_filename, mode='w', newline='') as csvfile:
         taskwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in todo_data:
-            taskwriter.writerow([user_id, user_data['username'],
-                task['completed'], task['title']])
+            taskwriter.writerow(
+                    [user_id, user_data['username'],
+                        task['completed'], task['title']])
+
 
 def main():
     if len(argv) != 2:
@@ -47,6 +51,7 @@ def main():
     user_data, todo_data = fetch_user_data(user_id)
 
     export_to_csv(user_id, user_data, todo_data)
+
 
 if __name__ == '__main__':
     main()
