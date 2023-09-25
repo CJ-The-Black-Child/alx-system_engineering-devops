@@ -4,11 +4,21 @@ Uses https://jsonplaceholder.typicode.com
 returns information about employee's todo list progress
 """
 
-from sys import argv
 import requests
+from sys import argv
 
 
 def fetch_user_data(user_id):
+    """
+    Fetches user and todo list data for a given user ID.
+
+    Args:
+        user_id (int): The ID of the employee for whom to fetch data.
+
+    Returns:
+        tuple: A tuple containing users data and todo list data as
+                dictionaries
+    """
     user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
     todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
 
@@ -27,6 +37,9 @@ def fetch_user_data(user_id):
 
 
 def main():
+    """
+    Main function to fetch and display employee's todo list progress
+    """
     if len(argv) != 2:
         print("Usage:python script.py <employee_id>")
         return
