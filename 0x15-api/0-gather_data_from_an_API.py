@@ -38,7 +38,8 @@ def fetch_user_data(user_id):
 
 def main():
     """
-    Main function to fetch and display employee's todo list progress
+    Main function to fetch
+    display employee's todo list progress
     """
     if len(argv) != 2:
         print("Usage:python script.py <employee_id>")
