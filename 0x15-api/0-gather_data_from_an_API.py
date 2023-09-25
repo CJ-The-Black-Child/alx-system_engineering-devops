@@ -40,9 +40,10 @@ def main():
     completed_tasks = [
             task['title'] for task in todo_data if task.get('completed')
         ]
+    total_tasks = len(todo_data)
 
     print(f"Employee {user_data['name']} is done with tasks({len(
-            completed_tasks)}/{len(todo_data)}): ")
+            completed_tasks)}/{total_tasks}): ")
     print("\n".join(f"\t{task}" for task in completed_tasks))
 
 
