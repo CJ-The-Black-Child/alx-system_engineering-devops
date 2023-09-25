@@ -18,6 +18,10 @@ def fetch_user_data(user_id):
     Returns:
         tuple: A tuple containing users data and todo list data as
                 dictionaries
+
+    Raises:
+        requests.exceptions.RequestException: An error occurred while making
+        HTTP requests to the JSONPlaceHolder API.
     """
     user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
     todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
