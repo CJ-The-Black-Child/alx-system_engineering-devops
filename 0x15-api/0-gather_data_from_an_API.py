@@ -1,7 +1,23 @@
 #!/usr/bin/python3
 """
+0-gather_data_from_an_API.py
+This script getches information about an employee's todo list progress
+using the JSONPlaceholder API.
+
+Usage:
+    python 0-gather_data_from_an_API.py <employee_id>
+
+Example:
+    python 0-gather_data_from_an_API.py 1
+
+It imports the 'requests' library to make HTTP requests to the API and
+displays completed tasks for the specified employee.
+
 Uses https://jsonplaceholder.typicode.com along with an employee Id to
 returns information about employee's todo list progress
+
+API Endpoint:
+    https://jsonplaceholder.typicode.com
 """
 
 
