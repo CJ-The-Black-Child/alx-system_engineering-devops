@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Uses https://jsonplaceholder.typicode.com
+Uses https://jsonplaceholder.typicode.com along with an employee Id to
 returns information about employee's todo list progress
 """
+
 
 import requests
 from sys import argv
