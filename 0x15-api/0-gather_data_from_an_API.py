@@ -77,11 +77,12 @@ def main():
         ]
     total_tasks = len(todo_data)
 
-    print(f"Employee {user_data['name']} is done with tasks({len(
-            completed_tasks)}/{total_tasks}): ")
+    print("Employee {} is done with tasks ({})/({}):".format(
+        user_data['name'],
+        len(completed_tasks),
+        total_tasks
+        ))
     print("\n".join(f"\t{task}" for task in completed_tasks))
 
 
 if __name__ == '__main__':
-    """To execute the block"""
-    main()
