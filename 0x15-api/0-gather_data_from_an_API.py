@@ -20,69 +20,26 @@ API Endpoint:
     https://jsonplaceholder.typicode.com
 """
 
-
+import json
 import requests
-from sys import argv
-
-
-def fetch_user_data(user_id):
-    """
-    Fetches user and todo list data for a given user ID.
-
-    Args:
-        user_id (int): The ID of the employee for whom to fetch data.
-
-    Returns:
-        tuple: A tuple containing users data and todo list data as
-                dictionaries
-
-    Raises:
-        requests.exceptions.RequestException: An error occurred while making
-        HTTP requests to the JSONPlaceHolder API.
-    """
-    user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
-
-    try:
-        user_response = requests.get(user_url, verify=False)
-        todo_response = requests.get(todo_url, verify=False)
-
-        user_data = user_response.json()
-        todo_data = todo_response.json()
-
-        return user_data, todo_data
-
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        return None, None
-
-
-def main():
-    """
-    Main function to fetch
-    display employee's todo list progress
-    """
-    if len(argv) != 2:
-        print("Usage:python script.py <employee_id>")
-        return
-
-    user_id = argv[1]
-    user_data, todo_data = fetch_user_data(user_id)
-
-    if user_data is None or todo_data is None:
-        return
-
-    completed_tasks = [
-            task['title'] for task in todo_data if task.get('completed')
-        ]
-    total_tasks = len(todo_data)
-
-    print("Employee {} is done with tasks ({})/({}):".format(
-        user_data['name'],
-        len(completed_tasks),
-        total_tasks
-        ))
-    print("\n".join(f"\t{task}" for task in completed_tasks))
-
 
 if __name__ == '__main__':
+    users = requests.get(
+            "https://jsonplaceholder.typicode.com/users", verify=False).json()
+    userdict = {}
+    usernamedict = {}
+    for user in users:
+        uid = user.get("id")
+        userdict[uid] = []
+        usernamedict[uid] = user.get("username")
+    todo = requests.get(
+            "https://jsonplaceholder.typicode.com/todos", verify=False).json()
+    for task in todo:
+        taskdict = {}
+        uid = task.get("userId")
+        taskdict["task"] = task.get('title')
+        taskdict["completed"] = task.get('completed')
+        taskdict["username"] = usernamedict.get(uid)
+        userdict.get(uid).append(taskdict)
+    with open("todo_all_employees.json", 'w') as jsonfile:
+        json.dump(userdict, jsonfile)

@@ -62,14 +62,10 @@ def export_to_json(todo_dict):
         json.dump(todo_dict, jsonfile, indent=4)
 
 
-def main():
+if __name__ == '__main__':
     users, todos = fetch_user_data()
 
     if users and todos:
         todo_dict = create_todo_dict(users, todos)
         export_to_json(todo_dict)
         print("Data exported to todo_all_employees.json")
-
-
-if __name__ == '__main__':
-    main()
