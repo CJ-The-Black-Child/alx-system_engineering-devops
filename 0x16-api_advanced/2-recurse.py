@@ -17,7 +17,12 @@ def recurse(subreddit, hot_list=[]):
     }
     params = {"limit": 100}
 
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    response = requests.get(
+        url,
+        headers=headers,
+        params=params,
+        allow_redirects=False
+        )
 
     """
     Check for invalid subreddit or if no results are found
