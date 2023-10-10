@@ -8,7 +8,8 @@ import requests
 
 def count_words(subreddit, word_list, after=None, word_counts=None):
     """
-    Prints count of specified words found in the hot artivles of a given reddit.
+    Prints count of specified words found in the hot
+    artivles of a given reddit.
 
     Args:
         subreddot (str): The subreddit to search.
@@ -40,7 +41,10 @@ def count_words(subreddit, word_list, after=None, word_counts=None):
         if aft is not None:
             return count_words(subreddit, word_list, aft, word_counts)
         else:
-            sorted_counts = sorted(word_counts.items(), key=lambda item: (-item[1], item[0].lower()))
+            sorted_counts = sorted(
+                word_counts.items(),
+                key=lambda item: (-item[1], item[0].lower())
+                )
             for word, count in sorted_counts:
                 if count > 0:
                     print('{}: {}'.format(word, count))
