@@ -5,6 +5,7 @@ for a given subreddit.
 """
 import requests
 
+
 def number_of_subscribers(subreddit):
     """
     Returns the nomber of subs
