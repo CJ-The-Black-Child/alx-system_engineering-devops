@@ -20,8 +20,8 @@ def count_words(subreddit, word_list, after=None, word_counts=None):
     if word_counts is None:
         word_counts = {word.lower(): 0 for word in word_list}
 
-    user_agent = {'User-agent': 'test45'}
-    url = 'http://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    user_agent = {'User-agent': 'linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)'}
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     params = {'after': after} if after else {}
 
     response = requests.get(url, headers=user_agent, params=params)
