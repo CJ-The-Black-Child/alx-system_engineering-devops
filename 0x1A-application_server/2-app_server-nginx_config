@@ -3,19 +3,42 @@ server {
 	listen [::]:80 default_server;
 
 	# Use Ip of server as domain name
-	server_name 34.237.91.196
+	server_name 34.237.91.196;
 
 	# Customize HTTP response header
 	add_header X-Served-By 246763-web-01;
 
 	# Serve /airbnb-onepage/ route on AirBnB_clone_v3
 	location = /airbnb-onepage/ {
-	    proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+	    proxy_pass http://127.0.0.1:5000/;
+	}
+
+	# Serve /number_odd_or_even/ route on AirBnB_clone_v2
+	location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+	    proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+	}
+
+	# Serve AirBnB_clone_v3 API
+	 location /api {
+	     proxy_pass http://127.0.0.1:5002/api;
+
+	# Configure /2-hbnb route of AirBnB_clone_v4 as root location
+	location / {
+	    proxy_pass http://127.0.0.1:5003/2-hbnb;
+	}
+	
+	# Serve static content for AirBnB_clone_v4
+	location /static {
+	    alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
 	}
 
 	error_page 404 /404.html;
-	location /404 {
+	location /404.html {
 	  root /var/www/html;
-	  internal;
 	}
+
+	location /404 {
+            root /var/www/html;
+            internal;
+        }
 }
